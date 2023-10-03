@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Presentation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.js"></script>
+</head>
+<body>
+  <h1>Data Presentation</h1>
+  <div id="dataContainer"></div>
+  <script>
+    function initializeSocket() {
+      var socket = io('http://localhost:3003'); // Replace with the actual server URL or port number
+
+      console.log('This is now.tsx');
+
+      socket.on('connect', function() {
+        console.log('Connected to server');
+      });
+
+      socket.on('heightData', function(height) {
+        var dataContainer = document.getElementById('dataContainer');
+        if (dataContainer) {
+          dataContainer.innerText = 'Received height data: ' + height;
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', initializeSocket);
+  </script>
+</body>
+</html>

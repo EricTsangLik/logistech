@@ -1,0 +1,3 @@
+[submodule "logitech-vms-client"]
+	path = logitech-vms-client
+	url = git@gitlab.com:SSSS5401/logitech-vms-client.git
